@@ -4,13 +4,14 @@
 $num = 10;
 
 if($num % 2 === 0){
+    # 10/2のあまり
     echo "偶数です。";
 }
 
 echo "<br>";
 # 改行
 
-//2. 変数 $age = 20 が 20 以上かつ 30 未満なら「20代です」と表示するコードを書いてください。
+//2. 変数 $age = 20 が 20 以上かつ 30 未満なら「20代です」と表示するコードを書いてください。論理演算子|| &&
 
 $age = 20;
 if($age >= 20){
@@ -28,6 +29,7 @@ $x = 10;
 if($x < 10){
     echo "10より小さい";
 }elseif( $x === 10){
+    # 基本同じを判定したい時には===を使う !==も同じく
     echo "ちょうど10";
 }elseif($x > 10){
     echo "10より大きい";
@@ -42,4 +44,20 @@ if($password === $input){
     echo "ログイン成功";
 }else{
     echo "パスワードが違います";
+}
+
+
+echo "<br>";
+
+//5. input.html と question3.php を連携させて、変数 $loggedIn = "true" の場合に「ようこそ」それ以外に場合には「ログインしてください」と表示するコードを書いてください。
+
+echo $_POST["login_status"];
+
+$loggedIn = $_POST["login_status"];
+// var_dump($loggedIn);
+
+if($loggedIn === "true"){
+    echo "ようこそ";
+}else{
+    echo "ログインしてください";
 }
