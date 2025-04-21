@@ -43,9 +43,8 @@ $input = "secret";
 if($password === $input){
     echo "ログイン成功";
 }else{
-    echo "パスワードが違います";
+    echo "パスワードが違います。";
 }
-
 
 echo "<br>";
 
