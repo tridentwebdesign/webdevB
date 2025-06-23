@@ -1,1 +1,8 @@
-Php0602!
+
+user名：mdnuser
+password:Php0623@
+ハッシュ化：$2y$10$YCt8CoZ4vci7XZrJd8JxBe1NqtG9Vj7JY76zrBYm9/C8BYM7sVO.2
+
+
+$user = 'phpuser';
+$password = 'Php0602!';

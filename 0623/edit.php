@@ -3,14 +3,14 @@
 require_once './functions.php';
 
 if (empty($_GET['id'])) {
-    // idが空の場合はエラー
-    echo 'idを指定してください。';
-    exit;
+  // idが空の場合はエラー
+  echo 'idを指定してください。';
+  exit;
 }
 if (!preg_match('/\A\d{1,11}+\z/u', $_GET['id'])) {
-    // idが数字以外の場合はエラー
-    echo 'idが正しくありません。';
-    exit;
+  // idが数字以外の場合はエラー
+  echo 'idが正しくありません。';
+  exit;
 }
 
 $id = (int) $_GET['id'];
@@ -26,11 +26,11 @@ $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 if (!$result) {
-    // データが存在しない場合はエラー
-    echo '指定したデータはありません。';
-    exit;
+  // データが存在しない場合はエラー
+  echo '指定したデータはありません。';
+  exit;
 }
-var_dump($result);
+// var_dump($result);
 
 
 $title = str2html($result['title']);
@@ -64,6 +64,7 @@ $html_form = <<<EOD
   </p>
   <p>
     <input type="hidden" name="id" value="$id">
+    <!-- 表示されないデータフィールド -->
   </p>
   <button type="submit">送信する</button>
 </form>
