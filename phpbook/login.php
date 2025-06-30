@@ -17,8 +17,6 @@ include __DIR__ . '/inc/header.php';
 </form>
 
 <?php
-include __DIR__ . '/inc/footer.php';
-
 if (!empty($_SESSION['login'])) {
     echo "ログイン済みです。<br>";
     echo "<a href='index.php'>リストへ戻る</a>";
@@ -40,15 +38,19 @@ try {
         echo "ログインに失敗しました";
         exit;
     }
-    var_dump($_POST['password'], $result['password']);
-    // if (password_verify($_POST['password'], $result['password'])) {
-    //     session_regenerate_id(true);
-    //     $_SESSION['login'] = true;
-    //     header("Location: index.php");
-    // } else {
-    //     echo "ログインに失敗しました（2）";
-    // }
+    //var_dump($_POST['password'], $result['password']);
+    if (password_verify($_POST['password'], $result['password'])) {
+        session_regenerate_id(true);
+        $_SESSION['login'] = true;
+        header("Location: index.php");
+    } else {
+        echo "ログインに失敗しました（2）";
+    }
 } catch (PDOException $e) {
     echo "エラー!： " . str2html($e->getMessage());
     exit;
 }
+?>
+
+
+<?php include __DIR__ . '/inc/footer.php';

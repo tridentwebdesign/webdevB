@@ -6,3 +6,10 @@ password:Php0623@
 
 $user = 'phpuser';
 $password = 'Php0602!';
+
+
+ロリポップDB
+ホスト：mysql325.phy.lolipop.lan
+データベース名：LAA1571908-sampledb
+ユーザー名：LAA1571908
+パスワード：Php0630 
