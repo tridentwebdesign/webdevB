@@ -6,7 +6,7 @@ $users = [
 ];
 #  1. 上記の配列をすべて表示してください。
 foreach($users as $array){
-    echo $array;
+    var_dump($array); 
 }
 #  2. 各ユーザーの「名前は○○さん、年齢は○○歳です」と表示してください。
 
