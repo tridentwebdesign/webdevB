@@ -16,3 +16,7 @@ function tax(int $price)
 // echo '消費税込みの値段：' . tax(1000) . '円';
 //関数で処理をしてもらって、その後に操作が必要なのか。
 echo '消費税込みの値段：' . tax('文字列') . '円';
+
+//JavaScriptは、型宣言ができません。
+//JavaScriptに型宣言ができるようにしたものが、TypeScriptになります。
+//このTypeは、型のことです。
