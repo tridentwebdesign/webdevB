@@ -1,15 +1,15 @@
 <?php
-require_once './functions.php';
+require_once __DIR__ . '/inc/functions.php';
 
 //idをバリデーションして、通過したものだけ
 if (empty($_GET['id'])) {
-    echo "idを指定してください";
-    exit;
+  echo "idを指定してください";
+  exit;
 }
 
 if (!preg_match('/\A\d{1,11}\z/u', $_GET['id'])) {
-    echo 'idがただしくありません';
-    exit;
+  echo 'idがただしくありません';
+  exit;
 }
 //整数型に変換
 $id = (int) $_GET['id'];
@@ -23,11 +23,9 @@ $stmt->bindParam(":id", $id, PDO::PARAM_INT);
 $stmt->execute();
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 if (!$result) {
-    echo "指定されたデータはありません。";
-    exit;
+  echo "指定されたデータはありません。";
+  exit;
 }
-
-var_dump($result);
 
 //取得したデータをフォームに配置
 $title = str2html($result['title']);
@@ -36,6 +34,7 @@ $price = str2html($result['price']);
 $publish = str2html($result['publish']);
 $author = str2html($result['author']);
 $id = str2html($result['id']);
+
 
 $html_form = <<<EOD
 <form action="update.php" method="post">
@@ -66,19 +65,13 @@ $html_form = <<<EOD
 </form>
 EOD;
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>書籍編集</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>書籍編集</h1>
-    </header>
-    <?php echo $html_form; ?>
-    <p style="text-align: center; margin-top: 20px;"><a href="list.php">リストに戻る</a></p>
-</body>
-</html>
+
+<?php
+include __DIR__ . '/inc/header.php';
+echo $html_form; ?>
+<p style="text-align: center; margin-top: 20px;">
+  <a href="index.php">リストに戻る</a>
+</p>
+
+<?php
+include __DIR__ . '/inc/footer.php';
