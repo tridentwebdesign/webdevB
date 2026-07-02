@@ -2,8 +2,6 @@
 // login.php
 session_start();
 require_once __DIR__ . '/inc/functions.php';
-?>
-<?php
 include __DIR__ . '/inc/header.php';
 ?>
 <form method="post" action="login.php">
@@ -19,6 +17,9 @@ include __DIR__ . '/inc/header.php';
 </form>
 
 <?php
+include __DIR__ . '/inc/footer.php';
+//ここに入れていく。
+
 if (!empty($_SESSION['login'])) {
     echo "ログイン済です。<br>";
     echo "<a href='index.php'>リストに戻る</a>";
