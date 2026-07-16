@@ -1,1 +1,65 @@
-/* Main stylesheet */
+/* assets/style.css */
+
+:root {
+  --color-bg: #f4f6fb;
+  --color-surface: #ffffff;
+  --color-primary: #4f6dff;
+  --color-primary-strong: #3f55d1;
+  --color-secondary: #f48d42;
+  --color-text: #1f2937;
+  --color-muted: #5f6d85;
+  --color-border: #d8dce8;
+  --color-success: #27ae60;
+  --color-error: #e74c3c;
+  --color-shadow: rgba(51, 60, 102, 0.12);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --radius-pill: 999px;
+  --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* JSトグルで返信スレッドを開閉するのに使う */
+.hidden {
+  display: none;
+}
+
+/* フォームや削除ボタンを横並びに置くための補助 */
+.inline {
+  display: inline;
+}
+
+/* アイコンは色付きの丸として表示するために、サイズと形だけ定義しておく */
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  object-fit: cover;
+}

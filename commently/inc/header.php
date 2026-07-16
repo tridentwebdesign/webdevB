@@ -18,7 +18,8 @@ if (!isset($_SESSION)) {
     <header class="site-header">
         <h1 class="site-logo">MovieApp</h1>
         <nav class="site-nav">
-            <?php if (!empty($_SESSION['login'])): ?>
+
+            <?php if (!empty($_SESSION['login']) && !empty($_SESSION['username'])): ?>
                 <span>こんにちは、@<?= str2html($_SESSION['username']) ?> さん</span>
                 <a href="logout.php">ログアウト</a>
             <?php else: ?>
