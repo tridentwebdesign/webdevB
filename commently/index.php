@@ -5,13 +5,12 @@ require_once __DIR__ . '/inc/functions.php';
 include __DIR__ . '/inc/header.php';
 ?>
 <article class="movie">
-    <video src="videos/sample.mp4" controls poster="videos/sample.jpg"></video>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/a_Hw4bAUj8A?si=Q_PLq7dA4RauCf7y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <h2 class="movie__title">あんなこんなを撮ってみた パート1</h2>
     <p class="movie__channel">annakona.TV</p>
 </article>
 
 <section class="comments">
-    <h2 class="comments__count">0件のコメント</h2>
     <!-- ステップ②でここに投稿フォームと一覧を追加 -->
     <?php
     // index.php の <section class="comments"> の中身
